@@ -131,8 +131,8 @@ class Rollout
     @groups[group.to_sym] = block
   end
 
-  def active?(feature, user = nil)
-    feature = get(feature)
+  def active?(feature, user = nil, force=false)
+    feature = get(feature, force)
     feature.active?(self, user)
   end
 
